@@ -38,7 +38,7 @@ export async function showMainMenu() {
 
 //This is the function that performs the game
 export async function startGame() {
-  //This is the array of questions for the game. Each element is an object.
+  // Questions array (each question is an object)
   const questions = [
     {
       question: "What is the capital of the United States?",
@@ -69,7 +69,7 @@ export async function startGame() {
 
   //This is the loop to iterate over each question
   for (const question of questions) {
-    try { /* The code of what's supposed to happen is in the catch */
+    try { /* valid execution occurs in try */
       const answer = await Promise.race([ /* With promise.race I can have an array of 2 promises,
         so it lets me wait for the user to answer or jump to the next question if
         no answer within 5 secodns */
