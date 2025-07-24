@@ -68,12 +68,9 @@ export async function startGame() {
   for(const question of questions) {
         const answer = await select({
             message: question.question,
-            choices: [
-        { name: question.choices[0], value: question.choices[0] },
-        { name: question.choices[1], value: question.choices[1] },
-        { name: question.choices[2], value: question.choices[2] },
-        { name: question.choices[3], value: question.choices[3] },
-        ],
+            choices: question.choices.map(choice => {
+                return {name: choice, value: choice}
+            })
         });
         answeredQuestions++;
         unansweredQuestions = totalQuestions - answeredQuestions
