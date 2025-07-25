@@ -5,8 +5,8 @@ import { currentGameState, totalGameState } from "./state.js";
 //This is the function to show the Main Menu of the game
 export async function showMainMenu() {
   const action = await select({
-    //I wrote a message informing the user that they have 5 seconds to answer each question
-    message: "Welcome to the Trivia CLI\nYou have 10 seconds to finish each question.\n \nMain Menu",
+    //I wrote a message informing the user that they have 7 seconds to answer each question
+    message: "Welcome to the Trivia CLI\nYou have 7 seconds to finish each question.\n \nMain Menu",
     choices: [
       { name: "Start Game", value: "start" },
       { name: "See Total Stats", value: "stats" },
@@ -161,11 +161,11 @@ export async function startGame() {
           })),
         }),
 
-        //This new promise is what's going to happen if no answer within 5 seconds
+        //This new promise is what's going to happen if no answer within 7 seconds
         new Promise((_, reject) =>
-             /* If no answer within 5 seconds, this promise will throw an error to be managed
+             /* If no answer within 7 seconds, this promise will throw an error to be managed
         by catch */
-          setTimeout(() => reject(new Error("timeout")), 10000)
+          setTimeout(() => reject(new Error("timeout")), 7000)
         ),
       ]);
 
