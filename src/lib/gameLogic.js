@@ -172,9 +172,11 @@ export async function startGame() {
       // If answered before timeout:
       if (answer === question.answer) { //This happens if the answer is correct
         currentGameState.correct++;
+        totalGameState.correct++;
         console.log(chalk.green("Correct!"));
       } else { //This happens if the answer is incorrect
         currentGameState.incorrect++;
+        totalGameState.incorrect++;
         console.log(chalk.red("Incorrect!"));
       }
     }
@@ -184,6 +186,7 @@ export async function startGame() {
       if (err.message === "timeout") {
         console.log(chalk.yellow("Time's up! Moving to the next question."));
         currentGameState.unanswered++;
+        totalGameState.unanswered++;
       } else {
         console.error("Unexpected error:", err);
       }
