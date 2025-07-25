@@ -1,7 +1,13 @@
-const gameState = {
+const currentGameState = {
     correct: 0,
     incorrect: 0,
     unanswered: 0
 };
 
-export default gameState;
+const totalGameState = {
+    correct: 0,
+    incorrect: 0,
+    unanswered: 0
+};
+
+export { currentGameState, totalGameState };
