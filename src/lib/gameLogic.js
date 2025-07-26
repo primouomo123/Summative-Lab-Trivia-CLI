@@ -226,8 +226,6 @@ export async function startGame() {
         console.error("Unexpected error:", err); //This is in case there's an unespected error
       }
     }
-
-    await new Promise((resolve) => setTimeout(resolve, 1000)); //This is to make a 1 second pause between questions
   }
 
   showCurrentGameStats(); //I call this function to show the current game stats
